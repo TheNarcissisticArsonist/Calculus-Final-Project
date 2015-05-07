@@ -4,6 +4,11 @@ primeList.innerHTML = primes.join(", ");
 currentPrime = document.getElementById("prime");
 currentPrime.innerHTML = primes.length;
 
+var methodStartTime;
+var methodEndTime;
+var methodStartMs;
+var MethodEndMs;
+
 //Method 1:
 document.getElementById("m11").addEventListener("click", m1NextPrime);
 document.getElementById("m12").addEventListener("click", function() {
@@ -143,3 +148,21 @@ document.getElementById("reset").addEventListener("click", function() {
   primeList.innerHTML = primes.join(", ");
   currentPrime.innerHTML = primes.length;
 });
+
+function getCurrentDate() {
+  //Date array structure:
+  //[month, day, year, hour, minute, second, millisecond]
+
+  //Raw:
+  obj = new Date();
+  month = obj.getMonth();
+  day = obj.getDate();
+  year = obj.getFullYear();
+  hour = obj.getHours();
+  minute = obj.getMinutes();
+  second = obj.getSeconds();
+  millisecond = obj.getMilliseconds();
+  month++;
+  dateArray = [month, day, year, hour, minute, second, millisecond];
+  return dateArray;
+}
