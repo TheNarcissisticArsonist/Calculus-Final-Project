@@ -190,3 +190,14 @@ function getCurrentDate() {
   dateArray = [month, day, year, hour, minute, second, millisecond];
   return dateArray;
 }
+function formatDateToString(date) {
+  month = String(date[0]);
+  day = String(date[1]);
+  year = String(date[2]);
+  hour = String(date[3]);
+  minute = String(date[4]);
+  second = String(date[5]);
+  millisecond = String(date[6]);
+  dateString = month + "/" + day + "/" + year + " at " + hour + ":" + minute + ":" + second + "." + millisecond;
+  return dateString;
+}
