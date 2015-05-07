@@ -13,6 +13,8 @@ pageStart = document.getElementById("start");
 pageEnd = document.getElementById("end");
 pageTime = document.getElementById("elapsed");
 
+table = document.getElementById("timeList");
+
 //Method 1:
 document.getElementById("m11").addEventListener("click", function() {
   methodStartTime = getCurrentDate();
@@ -224,7 +226,7 @@ function m3NextPrime() {
   currentPrime.innerHTML = primes.length;
 }
 
-//Reset button
+//Reset button:
 document.getElementById("reset").addEventListener("click", function() {
   if(!confirm("Are you sure?")) {
     return;
@@ -235,6 +237,14 @@ document.getElementById("reset").addEventListener("click", function() {
   pageStart.innerHTML = "00/00/0000 at 00:00:00.000";
   pageEnd.innerHTML = "00/00/0000 at 00:00:00.000";
   pageTime.innerHTML = "0 milliseconds";
+});
+
+//Reset table button:
+document.getElementById("resetTable").addEventListener("click", function() {
+  if(!confirm("Are you sure you want to reset the table?")) {
+    return;
+  }
+  timeList.innerHTML = "<tr><th>Method</th><th>Number Start Generation</th><th>Number End Generation</th><th>Time elapsed (ms)</th></tr>";
 });
 
 function getCurrentDate() {

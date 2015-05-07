@@ -4,6 +4,7 @@
 <link rel="stylesheet" type="text/css" href="Main.css">
 </head>
 <body>
+
 <div id="method1Container">
   <p class="method1Explanation">Method 1:</p>
   <div class="method1Option" id="m11">Generate Next<br>Prime</div>
@@ -25,12 +26,15 @@
   <div class="method3Option" id="m33">Generate Up To<br>____ Primes</div>
   <p class="method3Explanation">Method 3 takes the number one greater than the last prime number, and tests it using an even more advanced primality test. As opposed to dividing by every previous prime number, it only divides by prime numbers less than its square root, as factors "flip over" at that point.<br><br></p>
 </div>
+
 <br><div style="display: block; height: 10px;"></div>
+
 <div class="time" id="timeStart">Time Started: <span id="start">00/00/0000 at 00:00:00.000</span></div>
 <div class="time" id="timeEnd">Time Ended: <span id="end">00/00/0000 at 00:00:00.000</span></div>
 <div class="time">Time Elapsed: <span id="elapsed">0 milliseconds</span></div>
 <br>
 <p>The above measures how long it took to do the most recent generation cycle.</p>
+
 <div id="reset">Reset</div><div style="width: 5px;"></div><div id="currentPrime">Current Prime: <span id="prime"></span></div>
 <div id="horizLine"></div>
 <div id="primeList"></div>
@@ -43,6 +47,7 @@
     <th>Time elapsed (ms)</th>
   </tr>
 </table>
+<div id="resetTable">Reset Table</div>
 
 <script type="text/javascript" src="Main.js"></script>
 </body>
