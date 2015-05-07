@@ -186,6 +186,9 @@ function m3NextPrime() {
 
 //Reset button
 document.getElementById("reset").addEventListener("click", function() {
+  if(!confirm("Are you sure?")) {
+    return;
+  }
   primes = [2, 3, 5, 7];
   primeList.innerHTML = primes.join(", ");
   currentPrime.innerHTML = primes.length;
