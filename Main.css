@@ -1,0 +1,66 @@
+div {
+  display: inline-block;
+}
+
+div.method1Option {
+  background-color: #ffcccc;
+  padding: 5px;
+  text-align: center;
+  width: 105px;
+}
+div#method1Container {
+  padding: 5px;
+  border: 1px dashed #ffcccc;
+  width: 353px;
+}
+p.method1Explanation {
+  padding: 0px 2px;
+  text-align: justify;
+}
+
+div.method2Option {
+  background-color: #ccffcc;
+  padding: 5px;
+  text-align: center;
+  width: 105px;
+}
+div#method2Container {
+  padding: 5px;
+  border: 1px dashed #ccffcc;
+  width: 353px;
+}
+p.method2Explanation {
+  padding: 0px 2px;
+  text-align: justify;
+}
+
+div.method3Option {
+  background-color: #ccccff;
+  padding: 5px;
+  text-align: center;
+  width: 105px;
+}
+div#method3Container {
+  padding: 5px;
+  border: 1px dashed #ccccff;
+  width: 353px;
+}
+p.method3Explanation {
+  padding: 0px 2px;
+  text-align: justify;
+}
+
+div#reset {
+  border: 2px dotted red;
+  padding: 2px;
+}
+div#timeElapsed {
+  border: 2px dotted green;
+  padding: 2px;
+}
+
+div#horizLine {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
