@@ -9,6 +9,10 @@ var methodEndTime;
 var methodStartMs;
 var MethodEndMs;
 
+pageStart = document.getElementById("start");
+pageEnd = document.getElementById("end");
+pageTime = document.getElementById("elapsed");
+
 //Method 1:
 document.getElementById("m11").addEventListener("click", function() {
   methodStartTime = getCurrentDate();
@@ -17,6 +21,9 @@ document.getElementById("m11").addEventListener("click", function() {
   methodEndTime = getCurrentDate();
   methodEndMs = methodEndTime[7];
   timeElapsed = methodEndMs - methodStartMs;
+  pageStart.innerHTML = formatDateToString(methodStartTime);
+  pageEnd.innerHTML = formatDateToString(methodEndTime);
+  pageTime.innerHTML = String(timeElapsed) + " milliseconds";
 });
 document.getElementById("m12").addEventListener("click", function() {
   num = prompt("How many primes would you like to generate?");
@@ -31,6 +38,9 @@ document.getElementById("m12").addEventListener("click", function() {
   methodEndTime = getCurrentDate();
   methodEndMs = methodEndTime[7];
   timeElapsed = methodEndMs - methodStartMs;
+  pageStart.innerHTML = formatDateToString(methodStartTime);
+  pageEnd.innerHTML = formatDateToString(methodEndTime);
+  pageTime.innerHTML = String(timeElapsed) + " milliseconds";
 });
 document.getElementById("m13").addEventListener("click", function() {
   maxNum = prompt("Up to what number of primes would you like to generate?");
@@ -47,6 +57,9 @@ document.getElementById("m13").addEventListener("click", function() {
   methodEndTime = getCurrentDate();
   methodEndMs = methodEndTime[7];
   timeElapsed = methodEndMs - methodStartMs;
+  pageStart.innerHTML = formatDateToString(methodStartTime);
+  pageEnd.innerHTML = formatDateToString(methodEndTime);
+  pageTime.innerHTML = String(timeElapsed) + " milliseconds";
 });
 function m1NextPrime() {
   currentNum = primes[primes.length - 1];
@@ -77,6 +90,9 @@ document.getElementById("m21").addEventListener("click", function() {
   methodEndTime = getCurrentDate();
   methodEndMs = methodEndTime[7];
   timeElapsed = methodEndMs - methodStartMs;
+  pageStart.innerHTML = formatDateToString(methodStartTime);
+  pageEnd.innerHTML = formatDateToString(methodEndTime);
+  pageTime.innerHTML = String(timeElapsed) + " milliseconds";
 });
 document.getElementById("m22").addEventListener("click", function() {
   num = prompt("How many primes would you like to generate?");
@@ -91,6 +107,9 @@ document.getElementById("m22").addEventListener("click", function() {
   methodEndTime = getCurrentDate();
   methodEndMs = methodEndTime[7];
   timeElapsed = methodEndMs - methodStartMs;
+  pageStart.innerHTML = formatDateToString(methodStartTime);
+  pageEnd.innerHTML = formatDateToString(methodEndTime);
+  pageTime.innerHTML = String(timeElapsed) + " milliseconds";
 });
 document.getElementById("m23").addEventListener("click", function() {
   maxNum = prompt("Up to what number of primes would you like to generate?");
@@ -107,6 +126,9 @@ document.getElementById("m23").addEventListener("click", function() {
   methodEndTime = getCurrentDate();
   methodEndMs = methodEndTime[7];
   timeElapsed = methodEndMs - methodStartMs;
+  pageStart.innerHTML = formatDateToString(methodStartTime);
+  pageEnd.innerHTML = formatDateToString(methodEndTime);
+  pageTime.innerHTML = String(timeElapsed) + " milliseconds";
 });
 function m2NextPrime() {
   currentNum = primes[primes.length - 1];
@@ -137,6 +159,9 @@ document.getElementById("m31").addEventListener("click", function() {
   methodEndTime = getCurrentDate();
   methodEndMs = methodEndTime[7];
   timeElapsed = methodEndMs - methodStartMs;
+  pageStart.innerHTML = formatDateToString(methodStartTime);
+  pageEnd.innerHTML = formatDateToString(methodEndTime);
+  pageTime.innerHTML = String(timeElapsed) + " milliseconds";
 });
 document.getElementById("m32").addEventListener("click", function() {
   num = prompt("How many primes would you like to generate?");
@@ -151,6 +176,9 @@ document.getElementById("m32").addEventListener("click", function() {
   methodEndTime = getCurrentDate();
   methodEndMs = methodEndTime[7];
   timeElapsed = methodEndMs - methodStartMs;
+  pageStart.innerHTML = formatDateToString(methodStartTime);
+  pageEnd.innerHTML = formatDateToString(methodEndTime);
+  pageTime.innerHTML = String(timeElapsed) + " milliseconds";
 });
 document.getElementById("m33").addEventListener("click", function() {
   maxNum = prompt("Up to what number of primes would you like to generate?");
@@ -167,6 +195,9 @@ document.getElementById("m33").addEventListener("click", function() {
   methodEndTime = getCurrentDate();
   methodEndMs = methodEndTime[7];
   timeElapsed = methodEndMs - methodStartMs;
+  pageStart.innerHTML = formatDateToString(methodStartTime);
+  pageEnd.innerHTML = formatDateToString(methodEndTime);
+  pageTime.innerHTML = String(timeElapsed) + " milliseconds";
 });
 function m3NextPrime() {
   currentNum = primes[primes.length - 1];
