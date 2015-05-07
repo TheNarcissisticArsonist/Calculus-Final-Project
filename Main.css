@@ -72,3 +72,7 @@ div#currentPrime {
   border: 2px dotted blue;
   padding: 2px;
 }
+
+#timeList {
+  border: 1px solid black;
+}
