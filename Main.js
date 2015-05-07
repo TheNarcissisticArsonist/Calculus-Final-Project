@@ -186,18 +186,49 @@ function getCurrentDate() {
   minute = obj.getMinutes();
   second = obj.getSeconds();
   millisecond = obj.getMilliseconds();
-  month++;
-  dateArray = [month, day, year, hour, minute, second, millisecond];
+  totalMilliseconds = obj.getTime();
+  dateArray = [month, day, year, hour, minute, second, millisecond, totalMilliseconds];
   return dateArray;
 }
 function formatDateToString(date) {
   month = String(date[0]);
   day = String(date[1]);
   year = String(date[2]);
-  hour = String(date[3]);
   minute = String(date[4]);
   second = String(date[5]);
   millisecond = String(date[6]);
-  dateString = month + "/" + day + "/" + year + " at " + hour + ":" + minute + ":" + second + "." + millisecond;
+
+  //Format hours and AM/PM
+  if(date[3] == 0) {
+    hour = "12";
+    amPM = "AM";
+  }
+  else if(date[3] > 0 && date[3] < 11) {
+    hour = String(date[3]);
+    amPM = "AM";
+  }
+  else if(date[3] == 11) {
+    hour = "12";
+    amPM = "PM";
+  }
+  else if(date[3] > 11) {
+    hour = String(date[3] - 12);
+    amPM = "PM";
+  }
+
+  //Make sure seconds are two digits (because it looks prettier that way)
+  if(second.length == 1) {
+    second = "0" + second;
+  }
+
+  //Make sure milliseconds are three digits (for decimal accuracy)
+  if(millisecond.length == 1) {
+    millisecond = "00" + millisecond;
+  }
+  else if(millisecond.length == 2) {
+    millisecond = "0" + millisecond;
+  }
+
+  dateString = month + "/" + day + "/" + year + " at " + hour + ":" + minute + ":" + second + "." + millisecond + " " + amPM;
   return dateString;
 }
