@@ -136,3 +136,10 @@ function m3NextPrime() {
   primeList.innerHTML = primes.join(", ");
   currentPrime.innerHTML = primes.length;
 }
+
+//Reset button
+document.getElementById("reset").addEventListener("click", function() {
+  primes = [2, 3, 5, 7];
+  primeList.innerHTML = primes.join(", ");
+  currentPrime.innerHTML = primes.length;
+});
