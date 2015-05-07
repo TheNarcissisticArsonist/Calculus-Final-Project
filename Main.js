@@ -244,7 +244,7 @@ document.getElementById("resetTable").addEventListener("click", function() {
   if(!confirm("Are you sure you want to reset the table?")) {
     return;
   }
-  timeList.innerHTML = "<tr><th>Test Number</th><th>Method</th><th>Started Generation</th><th>Ended Generation</th><th>Number Generated</th><th>Time elapsed (ms)</th></tr>";
+  timeList.innerHTML = "<tr><th>Test Number</th><th>Method</th><th>Started Generation</th><th>Stopped Generation</th><th>Number Generated</th><th>Time elapsed (ms)</th></tr>";
 });
 
 function getCurrentDate() {
