@@ -232,6 +232,9 @@ document.getElementById("reset").addEventListener("click", function() {
   primes = [2, 3, 5, 7];
   primeList.innerHTML = primes.join(", ");
   currentPrime.innerHTML = primes.length;
+  pageStart.innerHTML = "00/00/0000 at 00:00:00.000";
+  pageEnd.innerHTML = "00/00/0000 at 00:00:00.000";
+  pageTime.innerHTML = "0 milliseconds";
 });
 
 function getCurrentDate() {
