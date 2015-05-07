@@ -10,7 +10,9 @@ var methodStartMs;
 var MethodEndMs;
 
 //Method 1:
-document.getElementById("m11").addEventListener("click", m1NextPrime);
+document.getElementById("m11").addEventListener("click", function() {
+  m1NextPrime();
+});
 document.getElementById("m12").addEventListener("click", function() {
   num = prompt("How many primes would you like to generate?");
   if(isNaN(num)) {
@@ -53,7 +55,9 @@ function m1NextPrime() {
 }
 
 //Method 2:
-document.getElementById("m21").addEventListener("click", m2NextPrime);
+document.getElementById("m21").addEventListener("click", function() {
+  m2NextPrime();
+});
 document.getElementById("m22").addEventListener("click", function() {
   num = prompt("How many primes would you like to generate?");
   if(isNaN(num)) {
@@ -96,7 +100,9 @@ function m2NextPrime() {
 }
 
 //Method 3:
-document.getElementById("m31").addEventListener("click", m3NextPrime);
+document.getElementById("m31").addEventListener("click", function() {
+  m3NextPrime();
+});
 document.getElementById("m32").addEventListener("click", function() {
   num = prompt("How many primes would you like to generate?");
   if(isNaN(num)) {
