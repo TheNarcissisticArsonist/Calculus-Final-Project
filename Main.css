@@ -67,3 +67,8 @@ div#horizLine {
   height: 1px;
   background-color: black;
 }
+
+div#currentPrime {
+  border: 2px dotted blue;
+  padding: 2px;
+}
