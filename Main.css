@@ -12,6 +12,7 @@ div#method1Container {
   padding: 5px;
   border: 1px dashed #ffcccc;
   width: 353px;
+  vertical-align: top;
 }
 p.method1Explanation {
   padding: 0px 2px;
@@ -28,6 +29,7 @@ div#method2Container {
   padding: 5px;
   border: 1px dashed #ccffcc;
   width: 353px;
+  vertical-align: top;
 }
 p.method2Explanation {
   padding: 0px 2px;
@@ -44,6 +46,7 @@ div#method3Container {
   padding: 5px;
   border: 1px dashed #ccccff;
   width: 353px;
+  vertical-align: top;
 }
 p.method3Explanation {
   padding: 0px 2px;
