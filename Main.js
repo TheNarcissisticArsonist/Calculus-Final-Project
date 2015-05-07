@@ -11,19 +11,24 @@ var MethodEndMs;
 
 //Method 1:
 document.getElementById("m11").addEventListener("click", function() {
+  methodStartTime = getCurrentDate();
   m1NextPrime();
+  methodEndTime = getCurrentDate();
 });
 document.getElementById("m12").addEventListener("click", function() {
   num = prompt("How many primes would you like to generate?");
+  methodStartTime = getCurrentDate();
   if(isNaN(num)) {
     return;
   }
   for(j=0; j<num; j++) {
     m1NextPrime();
   }
+  methodEndTime = getCurrentDate();
 });
 document.getElementById("m13").addEventListener("click", function() {
   maxNum = prompt("Up to what number of primes would you like to generate?");
+  methodStartTime = getCurrentDate();
   if(isNaN(maxNum)) {
     return;
   }
@@ -32,6 +37,7 @@ document.getElementById("m13").addEventListener("click", function() {
   for(j=0; j<num; j++) {
     m1NextPrime();
   }
+  methodEndTime = getCurrentDate();
 });
 function m1NextPrime() {
   currentNum = primes[primes.length - 1];
@@ -56,19 +62,24 @@ function m1NextPrime() {
 
 //Method 2:
 document.getElementById("m21").addEventListener("click", function() {
+  methodStartTime = getCurrentDate();
   m2NextPrime();
+  methodEndTime = getCurrentDate();
 });
 document.getElementById("m22").addEventListener("click", function() {
   num = prompt("How many primes would you like to generate?");
+  methodStartTime = getCurrentDate();
   if(isNaN(num)) {
     return;
   }
   for(j=0; j<num; j++) {
     m2NextPrime();
   }
+  methodEndTime = getCurrentDate();
 });
 document.getElementById("m23").addEventListener("click", function() {
   maxNum = prompt("Up to what number of primes would you like to generate?");
+  methodStartTime = getCurrentDate();
   if(isNaN(maxNum)) {
     return;
   }
@@ -77,6 +88,7 @@ document.getElementById("m23").addEventListener("click", function() {
   for(j=0; j<num; j++) {
     m2NextPrime();
   }
+  methodEndTime = getCurrentDate();
 });
 function m2NextPrime() {
   currentNum = primes[primes.length - 1];
@@ -101,19 +113,24 @@ function m2NextPrime() {
 
 //Method 3:
 document.getElementById("m31").addEventListener("click", function() {
+  methodStartTime = getCurrentDate();
   m3NextPrime();
+  methodEndTime = getCurrentDate();
 });
 document.getElementById("m32").addEventListener("click", function() {
   num = prompt("How many primes would you like to generate?");
+  methodStartTime = getCurrentDate();
   if(isNaN(num)) {
     return;
   }
   for(j=0; j<num; j++) {
     m3NextPrime();
   }
+  methodEndTime = getCurrentDate();
 });
 document.getElementById("m33").addEventListener("click", function() {
   maxNum = prompt("Up to what number of primes would you like to generate?");
+  methodStartTime = getCurrentDate();
   if(isNaN(maxNum)) {
     return;
   }
@@ -122,6 +139,7 @@ document.getElementById("m33").addEventListener("click", function() {
   for(j=0; j<num; j++) {
     m3NextPrime();
   }
+  methodEndTime = getCurrentDate();
 });
 function m3NextPrime() {
   currentNum = primes[primes.length - 1];
