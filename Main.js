@@ -14,9 +14,17 @@ pageEnd = document.getElementById("end");
 pageTime = document.getElementById("elapsed");
 
 table = document.getElementById("timeList");
+var currentTestNumber = 1;
+var currentMethod;
+var startedGeneration;
+var stoppedGeneration;
+var numberGenerated;
+var timeElapsed;
 
 //Method 1:
 document.getElementById("m11").addEventListener("click", function() {
+  currentMethod = 1;
+  startedGeneration = primes.length;
   methodStartTime = getCurrentDate();
   methodStartMs = methodStartTime[7];
   m1NextPrime();
@@ -26,9 +34,13 @@ document.getElementById("m11").addEventListener("click", function() {
   pageStart.innerHTML = formatDateToString(methodStartTime);
   pageEnd.innerHTML = formatDateToString(methodEndTime);
   pageTime.innerHTML = String(timeElapsed) + " milliseconds";
+  stoppedGeneration = primes.length;
+  numberGenerated = stoppedGeneration - startedGeneration;
 });
 document.getElementById("m12").addEventListener("click", function() {
   num = prompt("How many primes would you like to generate?");
+  currentMethod = 1;
+  startedGeneration = primes.length;
   methodStartTime = getCurrentDate();
   methodStartMs = methodStartTime[7];
   if(isNaN(num)) {
@@ -43,9 +55,13 @@ document.getElementById("m12").addEventListener("click", function() {
   pageStart.innerHTML = formatDateToString(methodStartTime);
   pageEnd.innerHTML = formatDateToString(methodEndTime);
   pageTime.innerHTML = String(timeElapsed) + " milliseconds";
+  stoppedGeneration = primes.length;
+  numberGenerated = stoppedGeneration - startedGeneration;
 });
 document.getElementById("m13").addEventListener("click", function() {
   maxNum = prompt("Up to what number of primes would you like to generate?");
+  currentMethod = 1;
+  startedGeneration = primes.length;
   methodStartTime = getCurrentDate();
   methodStartMs = methodStartTime[7];
   if(isNaN(maxNum)) {
@@ -62,6 +78,8 @@ document.getElementById("m13").addEventListener("click", function() {
   pageStart.innerHTML = formatDateToString(methodStartTime);
   pageEnd.innerHTML = formatDateToString(methodEndTime);
   pageTime.innerHTML = String(timeElapsed) + " milliseconds";
+  stoppedGeneration = primes.length;
+  numberGenerated = stoppedGeneration - startedGeneration;
 });
 function m1NextPrime() {
   currentNum = primes[primes.length - 1];
@@ -86,6 +104,8 @@ function m1NextPrime() {
 
 //Method 2:
 document.getElementById("m21").addEventListener("click", function() {
+  currentMethod = 1;
+  startedGeneration = primes.length;
   methodStartTime = getCurrentDate();
   methodStartMs = methodStartTime[7];
   m2NextPrime();
@@ -95,9 +115,13 @@ document.getElementById("m21").addEventListener("click", function() {
   pageStart.innerHTML = formatDateToString(methodStartTime);
   pageEnd.innerHTML = formatDateToString(methodEndTime);
   pageTime.innerHTML = String(timeElapsed) + " milliseconds";
+  stoppedGeneration = primes.length;
+  numberGenerated = stoppedGeneration - startedGeneration;
 });
 document.getElementById("m22").addEventListener("click", function() {
   num = prompt("How many primes would you like to generate?");
+  currentMethod = 1;
+  startedGeneration = primes.length;
   methodStartTime = getCurrentDate();
   methodStartMs = methodStartTime[7];
   if(isNaN(num)) {
@@ -112,9 +136,13 @@ document.getElementById("m22").addEventListener("click", function() {
   pageStart.innerHTML = formatDateToString(methodStartTime);
   pageEnd.innerHTML = formatDateToString(methodEndTime);
   pageTime.innerHTML = String(timeElapsed) + " milliseconds";
+  stoppedGeneration = primes.length;
+  numberGenerated = stoppedGeneration - startedGeneration;
 });
 document.getElementById("m23").addEventListener("click", function() {
   maxNum = prompt("Up to what number of primes would you like to generate?");
+  currentMethod = 1;
+  startedGeneration = primes.length;
   methodStartTime = getCurrentDate();
   methodStartMs = methodStartTime[7];
   if(isNaN(maxNum)) {
@@ -131,6 +159,8 @@ document.getElementById("m23").addEventListener("click", function() {
   pageStart.innerHTML = formatDateToString(methodStartTime);
   pageEnd.innerHTML = formatDateToString(methodEndTime);
   pageTime.innerHTML = String(timeElapsed) + " milliseconds";
+  stoppedGeneration = primes.length;
+  numberGenerated = stoppedGeneration - startedGeneration;
 });
 function m2NextPrime() {
   currentNum = primes[primes.length - 1];
@@ -155,6 +185,8 @@ function m2NextPrime() {
 
 //Method 3:
 document.getElementById("m31").addEventListener("click", function() {
+  currentMethod = 1;
+  startedGeneration = primes.length;
   methodStartTime = getCurrentDate();
   methodStartMs = methodStartTime[7];
   m3NextPrime();
@@ -164,9 +196,13 @@ document.getElementById("m31").addEventListener("click", function() {
   pageStart.innerHTML = formatDateToString(methodStartTime);
   pageEnd.innerHTML = formatDateToString(methodEndTime);
   pageTime.innerHTML = String(timeElapsed) + " milliseconds";
+  stoppedGeneration = primes.length;
+  numberGenerated = stoppedGeneration - startedGeneration;
 });
 document.getElementById("m32").addEventListener("click", function() {
   num = prompt("How many primes would you like to generate?");
+  currentMethod = 1;
+  startedGeneration = primes.length;
   methodStartTime = getCurrentDate();
   methodStartMs = methodStartTime[7];
   if(isNaN(num)) {
@@ -181,9 +217,13 @@ document.getElementById("m32").addEventListener("click", function() {
   pageStart.innerHTML = formatDateToString(methodStartTime);
   pageEnd.innerHTML = formatDateToString(methodEndTime);
   pageTime.innerHTML = String(timeElapsed) + " milliseconds";
+  stoppedGeneration = primes.length;
+  numberGenerated = stoppedGeneration - startedGeneration;
 });
 document.getElementById("m33").addEventListener("click", function() {
   maxNum = prompt("Up to what number of primes would you like to generate?");
+  currentMethod = 1;
+  startedGeneration = primes.length;
   methodStartTime = getCurrentDate();
   methodStartMs = methodStartTime[7];
   if(isNaN(maxNum)) {
@@ -200,6 +240,8 @@ document.getElementById("m33").addEventListener("click", function() {
   pageStart.innerHTML = formatDateToString(methodStartTime);
   pageEnd.innerHTML = formatDateToString(methodEndTime);
   pageTime.innerHTML = String(timeElapsed) + " milliseconds";
+  stoppedGeneration = primes.length;
+  numberGenerated = stoppedGeneration - startedGeneration;
 });
 function m3NextPrime() {
   currentNum = primes[primes.length - 1];
