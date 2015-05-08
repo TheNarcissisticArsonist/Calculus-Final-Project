@@ -91,4 +91,15 @@ div#sort {
   background-color: blue;
   padding: 5px;
   margin: 2px;
+  vertical-align: top;
+}
+span.sortOption {
+  margin: 2px;
+  border: 1px dotted white;
+  padding: 2px;
+}
+div#sortVerticalSpace {
+  width: 1px;
+  height: 5px;
+  display: block;
 }
