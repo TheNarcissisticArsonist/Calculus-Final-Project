@@ -477,7 +477,7 @@ modifierKeyStatus = {
 tableSortButton = document.getElementById("sort");
 tableSortButton.addEventListener("click", function() {
   if(!sortClicked) {
-    tableSortButton.innerHTML = 'Table Sorting Options<div id="sortVerticalSpace"></div><span id="number" class="sortOption">By Test Number</span>&nbsp;<span id="method" class="sortOption">By Method</span>&nbsp;<span id="time" class="sortOption">By Time</span>';
+    tableSortButton.innerHTML = 'Table Sorting Options<div class="sortMenuEndLine"></div><span id="number" class="sortOption">By Test Number</span><div class="sortMenuEndLine"></div><span id="method" class="sortOption">By Method</span><div class="sortMenuEndLine"></div><span id="time" class="sortOption">By Time</span>';
     sortClicked = true;
   }
   else {

@@ -98,7 +98,7 @@ span.sortOption {
   border: 1px dotted white;
   padding: 2px;
 }
-div#sortVerticalSpace {
+div.sortMenuEndLine {
   width: 1px;
   height: 5px;
   display: block;
