@@ -446,6 +446,13 @@ document.addEventListener("keydown", function(event) {
         m13();
       }
       break;
+    case 84:
+      if(modifierKeyStatus.command) {
+        return;
+      }
+      else {
+        tableSortToggle();
+      }
     default:
       return;
       break;
@@ -475,7 +482,8 @@ modifierKeyStatus = {
 
 //Table sorting
 tableSortButton = document.getElementById("sort");
-tableSortButton.addEventListener("click", function() {
+tableSortButton.addEventListener("click", tableSortToggle);
+function tableSortToggle() {
   if(!sortClicked) {
     tableSortButton.innerHTML = 'Table Sorting Options<div class="sortMenuEndLine"></div><span id="number" class="sortOption">By Test Number</span><div class="sortMenuEndLine"></div><span id="method" class="sortOption">By Method</span><div class="sortMenuEndLine"></div><span id="time" class="sortOption">By Time</span><div class="sortMenuEndLine"></div><span id="noMoreSort" class="sortOption">Undo Sorting</span></div>';
     sortClicked = true;
@@ -488,7 +496,7 @@ tableSortButton.addEventListener("click", function() {
     tableSortButton.innerHTML = 'Table Sorting Options';
     sortClicked = false;
   }
-});
+}
 var sortClicked = false;
 function getRowsFormattedToSort() {
   mainString = table.innerHTML;
