@@ -1,31 +1,9 @@
+//Starting stuff
 primes = [2, 3, 5, 7];
 primeList = document.getElementById("primeList");
 primeList.innerHTML = primes.join(", ");
 currentPrime = document.getElementById("prime");
 currentPrime.innerHTML = primes.length;
-
-var methodStartTime;
-var methodEndTime;
-var methodStartMs;
-var MethodEndMs;
-
-pageStart = document.getElementById("start");
-pageEnd = document.getElementById("end");
-pageTime = document.getElementById("elapsed");
-
-table = document.getElementById("timeList");
-var currentTestNumber = 1;
-var currentMethod;
-var startedGeneration;
-var stoppedGeneration;
-var numberGenerated;
-var timeElapsed;
-
-modifierKeyStatus = {
-  shift: false,
-  control: false,
-  command: false
-};
 
 //Method 1:
 document.getElementById("m11").addEventListener("click", m11);
@@ -326,8 +304,15 @@ function addNextTableRow() {
   table.innerHTML = allString;
   currentTestNumber++;
 }
+table = document.getElementById("timeList");
+var currentTestNumber = 1;
+var currentMethod;
+var startedGeneration;
+var stoppedGeneration;
+var numberGenerated;
+var timeElapsed;
 
-//Date stuff
+//Timing stuff
 function getCurrentDate() {
   //Date array structure:
   //[month, day, year, hour, minute, second, millisecond, totalMilliseconds]
@@ -387,6 +372,13 @@ function formatDateToString(date) {
   dateString = month + "/" + day + "/" + year + " at " + hour + ":" + minute + ":" + second + "." + millisecond + " " + amPM;
   return dateString;
 }
+var methodStartTime;
+var methodEndTime;
+var methodStartMs;
+var MethodEndMs;
+pageStart = document.getElementById("start");
+pageEnd = document.getElementById("end");
+pageTime = document.getElementById("elapsed");
 
 //Keyboard hotkeys
 document.addEventListener("keydown", function(event) {
@@ -475,3 +467,8 @@ document.addEventListener("keyup", function(event) {
       break;
   }
 });
+modifierKeyStatus = {
+  shift: false,
+  control: false,
+  command: false
+};
