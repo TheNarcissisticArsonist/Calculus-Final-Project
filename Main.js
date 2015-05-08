@@ -291,6 +291,7 @@ function resetTable() {
     return;
   }
   timeList.innerHTML = "<tr><th>Test Number</th><th>Method</th><th>Started Generation</th><th>Stopped Generation</th><th>Number Generated</th><th>Time elapsed (ms)</th></tr>";
+  currentTestNumber = 1;
 }
 function addNextTableRow() {
   tableElement1 = String(currentTestNumber);
