@@ -565,7 +565,30 @@ function sortByMethod() {
   }
 }
 function sortByTime() {
-
+  data = getRowsFormattedToSort();
+  table.innerHTML = "<tr><th>Test Number</th><th>Method</th><th>Started Generation</th><th>Stopped Generation</th><th>Number Generated</th><th>Time elapsed (ms)</th></tr>";
+  testList = [];
+  keyList = [];
+  for(i=0; i<data.length; i++) {
+    testList[i] = data[i][5];
+    keyList[i] = i;
+  }
+  unsplit = mySort(testList, keyList);
+  for(i=0; i<unsplit.length; i++) {
+    testList[i] = unsplit[i][0];
+    keyList[i] = unsplit[i][1];
+  }
+  for(i=0; i<keyList.length; i++) {
+    tableElement1 = String(data[keyList[i]][0]);
+    tableElement2 = String(data[keyList[i]][1]);
+    tableElement3 = String(data[keyList[i]][2]);
+    tableElement4 = String(data[keyList[i]][3]);
+    tableElement5 = String(data[keyList[i]][4]);
+    tableElement6 = String(data[keyList[i]][5]);
+    rowString = "<tr><td>" + tableElement1 + "</td><td>" + tableElement2 + "</td><td>" + tableElement3 + "</td><td>" + tableElement4 + "</td><td>" + tableElement5 + "</td><td>" + tableElement6 + "</td></tr>";
+    allString = table.innerHTML + rowString;
+    table.innerHTML = allString;
+  }
 }
 function mySort(test, key) {
   doubleArray = [];
