@@ -87,3 +87,8 @@ div#resetTable {
   padding: 5px;
   margin: 2px 0px;
 }
+div#sort {
+  background-color: blue;
+  padding: 5px;
+  margin: 2px;
+}
