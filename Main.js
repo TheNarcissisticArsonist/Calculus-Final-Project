@@ -28,7 +28,10 @@ modifierKeyStatus = {
 };
 
 //Method 1:
-document.getElementById("m11").addEventListener("click", function() {
+document.getElementById("m11").addEventListener("click", m11);
+document.getElementById("m12").addEventListener("click", m12);
+document.getElementById("m13").addEventListener("click", m13);
+function m11() {
   currentMethod = 1;
   startedGeneration = primes.length;
   methodStartTime = getCurrentDate();
@@ -43,8 +46,8 @@ document.getElementById("m11").addEventListener("click", function() {
   stoppedGeneration = primes.length;
   numberGenerated = stoppedGeneration - startedGeneration;
   addNextTableRow();
-});
-document.getElementById("m12").addEventListener("click", function() {
+}
+function m12() {
   num = prompt("How many primes would you like to generate?");
   currentMethod = 1;
   startedGeneration = primes.length;
@@ -65,8 +68,8 @@ document.getElementById("m12").addEventListener("click", function() {
   stoppedGeneration = primes.length;
   numberGenerated = stoppedGeneration - startedGeneration;
   addNextTableRow();
-});
-document.getElementById("m13").addEventListener("click", function() {
+}
+function m13() {
   maxNum = prompt("Up to what number of primes would you like to generate?");
   currentMethod = 1;
   startedGeneration = primes.length;
@@ -89,7 +92,7 @@ document.getElementById("m13").addEventListener("click", function() {
   stoppedGeneration = primes.length;
   numberGenerated = stoppedGeneration - startedGeneration;
   addNextTableRow();
-});
+}
 function m1NextPrime() {
   currentNum = primes[primes.length - 1];
   foundNext = false;
@@ -112,7 +115,10 @@ function m1NextPrime() {
 }
 
 //Method 2:
-document.getElementById("m21").addEventListener("click", function() {
+document.getElementById("m21").addEventListener("click", m21);
+document.getElementById("m22").addEventListener("click", m22);
+document.getElementById("m23").addEventListener("click", m23);
+function m21() {
   currentMethod = 1;
   startedGeneration = primes.length;
   methodStartTime = getCurrentDate();
@@ -127,8 +133,8 @@ document.getElementById("m21").addEventListener("click", function() {
   stoppedGeneration = primes.length;
   numberGenerated = stoppedGeneration - startedGeneration;
   addNextTableRow();
-});
-document.getElementById("m22").addEventListener("click", function() {
+}
+function m22() {
   num = prompt("How many primes would you like to generate?");
   currentMethod = 1;
   startedGeneration = primes.length;
@@ -149,8 +155,8 @@ document.getElementById("m22").addEventListener("click", function() {
   stoppedGeneration = primes.length;
   numberGenerated = stoppedGeneration - startedGeneration;
   addNextTableRow();
-});
-document.getElementById("m23").addEventListener("click", function() {
+}
+function m23() {
   maxNum = prompt("Up to what number of primes would you like to generate?");
   currentMethod = 1;
   startedGeneration = primes.length;
@@ -173,7 +179,7 @@ document.getElementById("m23").addEventListener("click", function() {
   stoppedGeneration = primes.length;
   numberGenerated = stoppedGeneration - startedGeneration;
   addNextTableRow();
-});
+}
 function m2NextPrime() {
   currentNum = primes[primes.length - 1];
   foundNext = false;
@@ -196,7 +202,10 @@ function m2NextPrime() {
 }
 
 //Method 3:
-document.getElementById("m31").addEventListener("click", function() {
+document.getElementById("m31").addEventListener("click", m31);
+document.getElementById("m32").addEventListener("click", m32);
+document.getElementById("m33").addEventListener("click", m33);
+function m31() {
   currentMethod = 1;
   startedGeneration = primes.length;
   methodStartTime = getCurrentDate();
@@ -211,8 +220,8 @@ document.getElementById("m31").addEventListener("click", function() {
   stoppedGeneration = primes.length;
   numberGenerated = stoppedGeneration - startedGeneration;
   addNextTableRow();
-});
-document.getElementById("m32").addEventListener("click", function() {
+}
+function m32() {
   num = prompt("How many primes would you like to generate?");
   currentMethod = 1;
   startedGeneration = primes.length;
@@ -233,8 +242,8 @@ document.getElementById("m32").addEventListener("click", function() {
   stoppedGeneration = primes.length;
   numberGenerated = stoppedGeneration - startedGeneration;
   addNextTableRow();
-});
-document.getElementById("m33").addEventListener("click", function() {
+}
+function m33() {
   maxNum = prompt("Up to what number of primes would you like to generate?");
   currentMethod = 1;
   startedGeneration = primes.length;
@@ -257,7 +266,7 @@ document.getElementById("m33").addEventListener("click", function() {
   stoppedGeneration = primes.length;
   numberGenerated = stoppedGeneration - startedGeneration;
   addNextTableRow();
-});
+}
 function m3NextPrime() {
   currentNum = primes[primes.length - 1];
   foundNext = false;
