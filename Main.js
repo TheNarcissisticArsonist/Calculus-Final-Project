@@ -21,6 +21,11 @@ var stoppedGeneration;
 var numberGenerated;
 var timeElapsed;
 
+modifierKeyStatus = {
+  shift: false;
+  control: false;
+};
+
 //Method 1:
 document.getElementById("m11").addEventListener("click", function() {
   currentMethod = 1;
@@ -309,6 +314,7 @@ function addNextTableRow() {
   table.innerHTML = allString;
 }
 
+//Date stuff
 function getCurrentDate() {
   //Date array structure:
   //[month, day, year, hour, minute, second, millisecond, totalMilliseconds]
@@ -368,3 +374,31 @@ function formatDateToString(date) {
   dateString = month + "/" + day + "/" + year + " at " + hour + ":" + minute + ":" + second + "." + millisecond + " " + amPM;
   return dateString;
 }
+
+//Keyboard hotkeys
+document.addEventListener("keydown", function(event) {
+  switch(event.which) {
+    case 16:
+      modifierKeyStatus.shift = true;
+      break;
+    case 17:
+      modifierKeyStatus.control = true;
+      break;
+    default:
+      return;
+      break;
+  }
+});
+document.addEventListner("keyup", function(event) {
+  switch(event.which) {
+    case 16:
+      modifierKeyStatus.shift = false;
+      break;
+    case 17:
+      modifierKeyStatus.control = false;
+      break;
+    default:
+      return;
+      break;
+  }
+});
