@@ -119,7 +119,7 @@ document.getElementById("m21").addEventListener("click", m21);
 document.getElementById("m22").addEventListener("click", m22);
 document.getElementById("m23").addEventListener("click", m23);
 function m21() {
-  currentMethod = 1;
+  currentMethod = 2;
   startedGeneration = primes.length;
   methodStartTime = getCurrentDate();
   methodStartMs = methodStartTime[7];
@@ -136,7 +136,7 @@ function m21() {
 }
 function m22() {
   num = prompt("How many primes would you like to generate?");
-  currentMethod = 1;
+  currentMethod = 2;
   startedGeneration = primes.length;
   methodStartTime = getCurrentDate();
   methodStartMs = methodStartTime[7];
@@ -158,7 +158,7 @@ function m22() {
 }
 function m23() {
   maxNum = prompt("Up to what number of primes would you like to generate?");
-  currentMethod = 1;
+  currentMethod = 2;
   startedGeneration = primes.length;
   methodStartTime = getCurrentDate();
   methodStartMs = methodStartTime[7];
@@ -206,7 +206,7 @@ document.getElementById("m31").addEventListener("click", m31);
 document.getElementById("m32").addEventListener("click", m32);
 document.getElementById("m33").addEventListener("click", m33);
 function m31() {
-  currentMethod = 1;
+  currentMethod = 3;
   startedGeneration = primes.length;
   methodStartTime = getCurrentDate();
   methodStartMs = methodStartTime[7];
@@ -223,7 +223,7 @@ function m31() {
 }
 function m32() {
   num = prompt("How many primes would you like to generate?");
-  currentMethod = 1;
+  currentMethod = 3;
   startedGeneration = primes.length;
   methodStartTime = getCurrentDate();
   methodStartMs = methodStartTime[7];
@@ -245,7 +245,7 @@ function m32() {
 }
 function m33() {
   maxNum = prompt("Up to what number of primes would you like to generate?");
-  currentMethod = 1;
+  currentMethod = 3;
   startedGeneration = primes.length;
   methodStartTime = getCurrentDate();
   methodStartMs = methodStartTime[7];
