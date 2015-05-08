@@ -23,7 +23,8 @@ var timeElapsed;
 
 modifierKeyStatus = {
   shift: false,
-  control: false
+  control: false,
+  command: false
 };
 
 //Method 1:
@@ -297,12 +298,13 @@ function reset() {
 }
 
 //Table stuff:
-document.getElementById("resetTable").addEventListener("click", function() {
+document.getElementById("resetTable").addEventListener("click", resetTable);
+function resetTable() {
   if(!confirm("Are you sure you want to reset the table?")) {
     return;
   }
   timeList.innerHTML = "<tr><th>Test Number</th><th>Method</th><th>Started Generation</th><th>Stopped Generation</th><th>Number Generated</th><th>Time elapsed (ms)</th></tr>";
-});
+}
 function addNextTableRow() {
   tableElement1 = String(currentTestNumber);
   tableElement2 = String(currentMethod);
@@ -385,21 +387,34 @@ document.addEventListener("keydown", function(event) {
     case 17:
       modifierKeyStatus.control = true;
       break;
-    case 82:
-      reset();
+    case 91:
+      modifierKeyStatus.command = true;
       break;
+    case 82:
+      if(modifierKeyStatus.command) {
+        return;
+      }
+      else if(modifierKeyStatus.shift) {
+        resetTable();
+      }
+      else {
+        reset();
+      }
     default:
       return;
       break;
   }
 });
-document.addEventListner("keyup", function(event) {
+document.addEventListener("keyup", function(event) {
   switch(event.which) {
     case 16:
       modifierKeyStatus.shift = false;
       break;
     case 17:
       modifierKeyStatus.control = false;
+      break;
+    case 91:
+      modifierKeyStatus.command = false;
       break;
     default:
       return;
