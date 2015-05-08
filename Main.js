@@ -22,8 +22,8 @@ var numberGenerated;
 var timeElapsed;
 
 modifierKeyStatus = {
-  shift: false;
-  control: false;
+  shift: false,
+  control: false
 };
 
 //Method 1:
@@ -283,7 +283,8 @@ function m3NextPrime() {
 }
 
 //Reset button:
-document.getElementById("reset").addEventListener("click", function() {
+document.getElementById("reset").addEventListener("click", reset);
+function reset() {
   if(!confirm("Are you sure?")) {
     return;
   }
@@ -293,7 +294,7 @@ document.getElementById("reset").addEventListener("click", function() {
   pageStart.innerHTML = "00/00/0000 at 00:00:00.000";
   pageEnd.innerHTML = "00/00/0000 at 00:00:00.000";
   pageTime.innerHTML = "0 milliseconds";
-});
+}
 
 //Table stuff:
 document.getElementById("resetTable").addEventListener("click", function() {
@@ -383,6 +384,9 @@ document.addEventListener("keydown", function(event) {
       break;
     case 17:
       modifierKeyStatus.control = true;
+      break;
+    case 82:
+      reset();
       break;
     default:
       return;
