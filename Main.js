@@ -36,6 +36,7 @@ document.getElementById("m11").addEventListener("click", function() {
   pageTime.innerHTML = String(timeElapsed) + " milliseconds";
   stoppedGeneration = primes.length;
   numberGenerated = stoppedGeneration - startedGeneration;
+  addNextTableRow();
 });
 document.getElementById("m12").addEventListener("click", function() {
   num = prompt("How many primes would you like to generate?");
@@ -57,6 +58,7 @@ document.getElementById("m12").addEventListener("click", function() {
   pageTime.innerHTML = String(timeElapsed) + " milliseconds";
   stoppedGeneration = primes.length;
   numberGenerated = stoppedGeneration - startedGeneration;
+  addNextTableRow();
 });
 document.getElementById("m13").addEventListener("click", function() {
   maxNum = prompt("Up to what number of primes would you like to generate?");
@@ -80,6 +82,7 @@ document.getElementById("m13").addEventListener("click", function() {
   pageTime.innerHTML = String(timeElapsed) + " milliseconds";
   stoppedGeneration = primes.length;
   numberGenerated = stoppedGeneration - startedGeneration;
+  addNextTableRow();
 });
 function m1NextPrime() {
   currentNum = primes[primes.length - 1];
@@ -117,6 +120,7 @@ document.getElementById("m21").addEventListener("click", function() {
   pageTime.innerHTML = String(timeElapsed) + " milliseconds";
   stoppedGeneration = primes.length;
   numberGenerated = stoppedGeneration - startedGeneration;
+  addNextTableRow();
 });
 document.getElementById("m22").addEventListener("click", function() {
   num = prompt("How many primes would you like to generate?");
@@ -138,6 +142,7 @@ document.getElementById("m22").addEventListener("click", function() {
   pageTime.innerHTML = String(timeElapsed) + " milliseconds";
   stoppedGeneration = primes.length;
   numberGenerated = stoppedGeneration - startedGeneration;
+  addNextTableRow();
 });
 document.getElementById("m23").addEventListener("click", function() {
   maxNum = prompt("Up to what number of primes would you like to generate?");
@@ -161,6 +166,7 @@ document.getElementById("m23").addEventListener("click", function() {
   pageTime.innerHTML = String(timeElapsed) + " milliseconds";
   stoppedGeneration = primes.length;
   numberGenerated = stoppedGeneration - startedGeneration;
+  addNextTableRow();
 });
 function m2NextPrime() {
   currentNum = primes[primes.length - 1];
@@ -198,6 +204,7 @@ document.getElementById("m31").addEventListener("click", function() {
   pageTime.innerHTML = String(timeElapsed) + " milliseconds";
   stoppedGeneration = primes.length;
   numberGenerated = stoppedGeneration - startedGeneration;
+  addNextTableRow();
 });
 document.getElementById("m32").addEventListener("click", function() {
   num = prompt("How many primes would you like to generate?");
@@ -219,6 +226,7 @@ document.getElementById("m32").addEventListener("click", function() {
   pageTime.innerHTML = String(timeElapsed) + " milliseconds";
   stoppedGeneration = primes.length;
   numberGenerated = stoppedGeneration - startedGeneration;
+  addNextTableRow();
 });
 document.getElementById("m33").addEventListener("click", function() {
   maxNum = prompt("Up to what number of primes would you like to generate?");
@@ -242,6 +250,7 @@ document.getElementById("m33").addEventListener("click", function() {
   pageTime.innerHTML = String(timeElapsed) + " milliseconds";
   stoppedGeneration = primes.length;
   numberGenerated = stoppedGeneration - startedGeneration;
+  addNextTableRow();
 });
 function m3NextPrime() {
   currentNum = primes[primes.length - 1];
@@ -281,13 +290,24 @@ document.getElementById("reset").addEventListener("click", function() {
   pageTime.innerHTML = "0 milliseconds";
 });
 
-//Reset table button:
+//Table stuff:
 document.getElementById("resetTable").addEventListener("click", function() {
   if(!confirm("Are you sure you want to reset the table?")) {
     return;
   }
   timeList.innerHTML = "<tr><th>Test Number</th><th>Method</th><th>Started Generation</th><th>Stopped Generation</th><th>Number Generated</th><th>Time elapsed (ms)</th></tr>";
 });
+function addNextTableRow() {
+  tableElement1 = String(currentTestNumber);
+  tableElement2 = String(currentMethod);
+  tableElement3 = String(startedGeneration);
+  tableElement4 = String(stoppedGeneration);
+  tableElement5 = String(numberGenerated);
+  tableElement6 = String(timeElapsed);
+  rowString = "<tr><td>" + tableElement1 + "</td><td>" + tableElement2 + "</td><td>" + tableElement3 + "</td><td>" + tableElement4 + "</td><td>" + tableElement5 + "</td><td>" + tableElement6 + "</td></tr>";
+  allString = table.innerHTML + rowString;
+  table.innerHTML = allString;
+}
 
 function getCurrentDate() {
   //Date array structure:
