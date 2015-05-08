@@ -76,6 +76,12 @@ div#currentPrime {
 #timeList {
   border: 1px solid black;
 }
+#timeList tr th {
+  border: 1px dotted #555555;
+}
+#timeList tr td {
+  border: 1px dotted #555555;
+}
 div#resetTable {
   background-color: red;
   padding: 5px;
