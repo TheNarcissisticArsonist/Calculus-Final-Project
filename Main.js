@@ -486,3 +486,38 @@ tableSortButton.addEventListener("click", function() {
   }
 });
 var sortClicked = false;
+getRowsFormattedToSort = function() {
+  mainString = table.innerHTML;
+  mainArray = mainString.split("</tbody>");
+  for(i=1; i<mainArray.length; i++) {
+    mainArray[i] = mainArray[i].split("</td>");
+  }
+  for(i=1; i<mainArray.length; i++) {
+    for(j=0; j<mainArray[i].length-1; j++) {
+      length = mainArray[i][j].length;
+      tempString = mainArray[i][j];
+      if(j == 0) {
+        mainArray[i][j] = tempString.slice(15, length);
+      }
+      else {
+        mainArray[i][j] = tempString.slice(4, length);
+      }
+    }
+    mainArray[i] = mainArray[i].slice(0, mainArray[i].length-1);
+  }
+  //At this point, mainArray[i] represents an individual test
+  //mainArray[i][j] represents the data of the table cells, from left to right
+  //There are still some misc bits in there to get rid of
+  mainArray = mainArray.slice(1, mainArray.length - 1);
+  //At last, everything is formatted in pure numerical values, and the html code is gone.
+  return mainArray
+}
+sortByTestNumber = function() {
+
+}
+sortByMethod = function() {
+
+}
+sortByTime = function() {
+
+}
