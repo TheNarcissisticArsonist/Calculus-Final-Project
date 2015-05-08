@@ -1,0 +1,13 @@
+Hotkeys:
+1:          Method 1, generate one prime number
+2:          Method 1, generate ___ prime numbers
+3:          Method 1, generate up to ___ prime numbers
+[control]:  Switches to Method 2
+[shift]:    Switches to Method 3
+r:          Reset prime generation
+R:          Reset table
+t:          Toggle sort options visibility
+
+Most boxes on the page are clickable buttons,
+accomplishing similar or even the same thing as hotkeys.
+Sometimes, they can do stuff the hotkeys can't.
