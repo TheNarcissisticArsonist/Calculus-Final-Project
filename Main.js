@@ -390,16 +390,16 @@ function formatDateToString(date) {
 //Keyboard hotkeys
 document.addEventListener("keydown", function(event) {
   switch(event.which) {
-    case 16:
+    case 16://shift
       modifierKeyStatus.shift = true;
       break;
-    case 17:
+    case 17://control
       modifierKeyStatus.control = true;
       break;
-    case 91:
+    case 91://command
       modifierKeyStatus.command = true;
       break;
-    case 82:
+    case 82://r
       if(modifierKeyStatus.command) {
         return;
       }
@@ -409,6 +409,50 @@ document.addEventListener("keydown", function(event) {
       else {
         reset();
       }
+      break;
+    /*shift for method 3, control for method 2, neither for method 1*/
+    case 49://1
+      if(modifierKeyStatus.command) {
+        return;
+      }
+      else if(modifierKeyStatus.shift) {
+        m31();
+      }
+      else if(modifierKeyStatus.control) {
+        m21();
+      }
+      else {
+        m11();
+      }
+      break;
+    case 50://2
+      if(modifierKeyStatus.command) {
+        return;
+      }
+      else if(modifierKeyStatus.shift) {
+        m32();
+      }
+      else if(modifierKeyStatus.control) {
+        m22();
+      }
+      else {
+        m12();
+      }
+      break;
+    case 51://3
+      if(modifierKeyStatus.command) {
+        return;
+      }
+      else if(modifierKeyStatus.shift) {
+        m33();
+      }
+      else if(modifierKeyStatus.control) {
+        m23();
+      }
+      else {
+        m13();
+      }
+      break;
     default:
       return;
       break;
