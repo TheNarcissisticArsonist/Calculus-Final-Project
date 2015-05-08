@@ -324,6 +324,7 @@ function addNextTableRow() {
   rowString = "<tr><td>" + tableElement1 + "</td><td>" + tableElement2 + "</td><td>" + tableElement3 + "</td><td>" + tableElement4 + "</td><td>" + tableElement5 + "</td><td>" + tableElement6 + "</td></tr>";
   allString = table.innerHTML + rowString;
   table.innerHTML = allString;
+  currentTestNumber++;
 }
 
 //Date stuff
