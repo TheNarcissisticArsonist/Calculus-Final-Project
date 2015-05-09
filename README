@@ -7,6 +7,7 @@ Hotkeys:
 r:          Reset prime generation
 R:          Reset table
 t:          Toggle sort options visibility
+a:          Run advanced test
 
 Most boxes on the page are clickable buttons,
 accomplishing similar or even the same thing as hotkeys.
