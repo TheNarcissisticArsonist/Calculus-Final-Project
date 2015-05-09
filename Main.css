@@ -10,7 +10,7 @@ div.method1Option {
 }
 div#method1Container {
   padding: 5px;
-  border: 1px dashed #ffcccc;
+  border: 2px dashed #ffcccc;
   width: 353px;
   vertical-align: top;
 }
@@ -27,7 +27,7 @@ div.method2Option {
 }
 div#method2Container {
   padding: 5px;
-  border: 1px dashed #ccffcc;
+  border: 2px dashed #ccffcc;
   width: 353px;
   vertical-align: top;
 }
@@ -44,7 +44,7 @@ div.method3Option {
 }
 div#method3Container {
   padding: 5px;
-  border: 1px dashed #ccccff;
+  border: 2px dashed #ccccff;
   width: 353px;
   vertical-align: top;
 }
