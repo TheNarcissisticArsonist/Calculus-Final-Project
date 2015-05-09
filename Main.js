@@ -272,9 +272,11 @@ function m3NextPrime() {
 
 //Reset button:
 document.getElementById("reset").addEventListener("click", reset);
-function reset() {
-  if(!confirm("Are you sure?")) {
-    return;
+function reset(doNotConfirm) {
+  if(!doNotConfirm) {
+    if(!confirm("Are you sure?")) {
+      return;
+    }
   }
   primes = [2, 3, 5, 7];
   primeList.innerHTML = primes.join(", ");
@@ -286,9 +288,11 @@ function reset() {
 
 //Table stuff:
 document.getElementById("resetTable").addEventListener("click", resetTable);
-function resetTable() {
-  if(!confirm("Are you sure you want to reset the table?")) {
-    return;
+function resetTable(doNotConfirm) {
+  if(!doNotConfirm) {
+    if(!confirm("Are you sure you want to reset the table?")) {
+      return;
+    }
   }
   timeList.innerHTML = "<tr><th>Test Number</th><th>Method</th><th>Started Generation</th><th>Stopped Generation</th><th>Number Generated</th><th>Time elapsed (ms)</th></tr>";
   currentTestNumber = 1;
@@ -401,7 +405,7 @@ document.addEventListener("keydown", function(event) {
         resetTable();
       }
       else {
-        reset();
+        reset(false);
       }
       break;
     /*shift for method 3, control for method 2, neither for method 1*/
@@ -612,4 +616,154 @@ function mySort(test, key) {
     return a[0] - b[0];
   });
   return doubleArray;
+}
+
+//Custom Test
+customTest = document.getElementById("custom");
+customTest.addEventListener("click", runCustomTest);
+function runCustomTest() {
+  input = prompt("").split("");
+  //Format:
+  //[m11, m12, m12num, m13, m13num, m21, m22, m22num, m23, m23num, m31, m32, m32num, m33, m33num, resetTable]
+  if(input[15] == 1) {
+    resetTable(true);
+  }
+  for(i=0; i<input[0]; i++) {
+    reset(true);
+    m11();
+  }
+  for(i=0; i<input[1]; i++) {
+    reset(true);
+    num = input[2]
+    currentMethod = 1;
+    startedGeneration = primes.length;
+    methodStartTime = getCurrentDate();
+    methodStartMs = methodStartTime[7];
+    for(j=0; j<num; j++) {
+      m1NextPrime();
+    }
+    methodEndTime = getCurrentDate();
+    methodEndMs = methodEndTime[7];
+    timeElapsed = methodEndMs - methodStartMs;
+    pageStart.innerHTML = formatDateToString(methodStartTime);
+    pageEnd.innerHTML = formatDateToString(methodEndTime);
+    pageTime.innerHTML = String(timeElapsed) + " milliseconds";
+    stoppedGeneration = primes.length;
+    numberGenerated = stoppedGeneration - startedGeneration;
+    addNextTableRow();
+  }
+  for(i=0; i<input[3]; i++) {
+    reset(true);
+    maxNum = input[4];
+    currentMethod = 1;
+    startedGeneration = primes.length;
+    methodStartTime = getCurrentDate();
+    methodStartMs = methodStartTime[7];
+    currentNum = currentPrime.innerHTML;
+    num = maxNum - currentNum;
+    for(j=0; j<num; j++) {
+      m1NextPrime();
+    }
+    methodEndTime = getCurrentDate();
+    methodEndMs = methodEndTime[7];
+    timeElapsed = methodEndMs - methodStartMs;
+    pageStart.innerHTML = formatDateToString(methodStartTime);
+    pageEnd.innerHTML = formatDateToString(methodEndTime);
+    pageTime.innerHTML = String(timeElapsed) + " milliseconds";
+    stoppedGeneration = primes.length;
+    numberGenerated = stoppedGeneration - startedGeneration;
+    addNextTableRow();
+  }
+  for(i=0; i<input[5]; i++) {
+    reset(true);
+    m21();
+  }
+  for(i=0; i<input[6]; i++) {
+    reset(false);
+    num = input[7];
+    currentMethod = 2;
+    startedGeneration = primes.length;
+    methodStartTime = getCurrentDate();
+    methodStartMs = methodStartTime[7];
+    for(j=0; j<num; j++) {
+      m2NextPrime();
+    }
+    methodEndTime = getCurrentDate();
+    methodEndMs = methodEndTime[7];
+    timeElapsed = methodEndMs - methodStartMs;
+    pageStart.innerHTML = formatDateToString(methodStartTime);
+    pageEnd.innerHTML = formatDateToString(methodEndTime);
+    pageTime.innerHTML = String(timeElapsed) + " milliseconds";
+    stoppedGeneration = primes.length;
+    numberGenerated = stoppedGeneration - startedGeneration;
+    addNextTableRow();
+  }
+  for(i=0; i<input[8]; i++) {
+    reset(true);
+    maxNum = input[9];
+    currentMethod = 2;
+    startedGeneration = primes.length;
+    methodStartTime = getCurrentDate();
+    methodStartMs = methodStartTime[7];
+    currentNum = currentPrime.innerHTML;
+    num = maxNum - currentNum;
+    for(j=0; j<num; j++) {
+      m2NextPrime();
+    }
+    methodEndTime = getCurrentDate();
+    methodEndMs = methodEndTime[7];
+    timeElapsed = methodEndMs - methodStartMs;
+    pageStart.innerHTML = formatDateToString(methodStartTime);
+    pageEnd.innerHTML = formatDateToString(methodEndTime);
+    pageTime.innerHTML = String(timeElapsed) + " milliseconds";
+    stoppedGeneration = primes.length;
+    numberGenerated = stoppedGeneration - startedGeneration;
+    addNextTableRow();
+  }
+  for(i=0; i<input[10]; i++) {
+    reset(true);
+    m31();
+  }
+  for(i=0; i<input[11]; i++) {
+    reset(true);
+    num = input[12];
+    currentMethod = 3;
+    startedGeneration = primes.length;
+    methodStartTime = getCurrentDate();
+    methodStartMs = methodStartTime[7];
+    for(j=0; j<num; j++) {
+      m3NextPrime();
+    }
+    methodEndTime = getCurrentDate();
+    methodEndMs = methodEndTime[7];
+    timeElapsed = methodEndMs - methodStartMs;
+    pageStart.innerHTML = formatDateToString(methodStartTime);
+    pageEnd.innerHTML = formatDateToString(methodEndTime);
+    pageTime.innerHTML = String(timeElapsed) + " milliseconds";
+    stoppedGeneration = primes.length;
+    numberGenerated = stoppedGeneration - startedGeneration;
+    addNextTableRow();
+  }
+  for(i=0; i<input[13]; i++) {
+    reset(true);
+    maxNum = input[14];
+    currentMethod = 3;
+    startedGeneration = primes.length;
+    methodStartTime = getCurrentDate();
+    methodStartMs = methodStartTime[7];
+    currentNum = currentPrime.innerHTML;
+    num = maxNum - currentNum;
+    for(j=0; j<num; j++) {
+      m3NextPrime();
+    }
+    methodEndTime = getCurrentDate();
+    methodEndMs = methodEndTime[7];
+    timeElapsed = methodEndMs - methodStartMs;
+    pageStart.innerHTML = formatDateToString(methodStartTime);
+    pageEnd.innerHTML = formatDateToString(methodEndTime);
+    pageTime.innerHTML = String(timeElapsed) + " milliseconds";
+    stoppedGeneration = primes.length;
+    numberGenerated = stoppedGeneration - startedGeneration;
+    addNextTableRow();
+  }
 }
