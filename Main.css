@@ -110,6 +110,11 @@ div#custom {
   padding: 5px;
   margin: 2px 0px;
 }
+div#dump {
+  background-color: yellow;
+  padding: 5px;
+  margin: 2px 0px;
+}
 
 div#keyRegistry {
   display: none;
