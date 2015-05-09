@@ -633,46 +633,24 @@ customTest.addEventListener("click", runCustomTest);
 function runCustomTest() {
   input = prompt("").split(".");
   //Format:
-  //[m11, m12, m12num, m13, m13num, m21, m22, m22num, m23, m23num, m31, m32, m32num, m33, m33num, resetTable]
+  //[resetTable, reset, m11, m12, m12num, m13, m13num, m21, m22, m22num, m23, m23num, m31, m32, m32num, m33, m33num]
   for(i=0; i<input.length; i++) {
     input[i] = Number(input[i]);
   }
-  if(input[15] == 1) {
+  if(input[0] == 1) {
     resetTable(true);
   }
-  for(n=0; n<input[0]; n++) {
+  for(n=0; n<input[2]; n++) {
     reset(true);
     m11();
   }
-  for(n=0; n<input[1]; n++) {
-    reset(true);
-    num = input[2]
-    currentMethod = 1;
-    startedGeneration = primes.length;
-    methodStartTime = getCurrentDate();
-    methodStartMs = methodStartTime[7];
-    for(j=0; j<num; j++) {
-      m1NextPrime();
-    }
-    methodEndTime = getCurrentDate();
-    methodEndMs = methodEndTime[7];
-    timeElapsed = methodEndMs - methodStartMs;
-    pageStart.innerHTML = formatDateToString(methodStartTime);
-    pageEnd.innerHTML = formatDateToString(methodEndTime);
-    pageTime.innerHTML = String(timeElapsed) + " milliseconds";
-    stoppedGeneration = primes.length;
-    numberGenerated = stoppedGeneration - startedGeneration;
-    addNextTableRow();
-  }
   for(n=0; n<input[3]; n++) {
     reset(true);
-    maxNum = input[4];
+    num = input[4]
     currentMethod = 1;
     startedGeneration = primes.length;
     methodStartTime = getCurrentDate();
     methodStartMs = methodStartTime[7];
-    currentNum = currentPrime.innerHTML;
-    num = maxNum - currentNum;
     for(j=0; j<num; j++) {
       m1NextPrime();
     }
@@ -688,17 +666,15 @@ function runCustomTest() {
   }
   for(n=0; n<input[5]; n++) {
     reset(true);
-    m21();
-  }
-  for(n=0; n<input[6]; n++) {
-    reset(false);
-    num = input[7];
-    currentMethod = 2;
+    maxNum = input[6];
+    currentMethod = 1;
     startedGeneration = primes.length;
     methodStartTime = getCurrentDate();
     methodStartMs = methodStartTime[7];
+    currentNum = currentPrime.innerHTML;
+    num = maxNum - currentNum;
     for(j=0; j<num; j++) {
-      m2NextPrime();
+      m1NextPrime();
     }
     methodEndTime = getCurrentDate();
     methodEndMs = methodEndTime[7];
@@ -710,15 +686,17 @@ function runCustomTest() {
     numberGenerated = stoppedGeneration - startedGeneration;
     addNextTableRow();
   }
-  for(n=0; n<input[8]; n++) {
+  for(n=0; n<input[7]; n++) {
     reset(true);
-    maxNum = input[9];
+    m21();
+  }
+  for(n=0; n<input[8]; n++) {
+    reset(false);
+    num = input[9];
     currentMethod = 2;
     startedGeneration = primes.length;
     methodStartTime = getCurrentDate();
     methodStartMs = methodStartTime[7];
-    currentNum = currentPrime.innerHTML;
-    num = maxNum - currentNum;
     for(j=0; j<num; j++) {
       m2NextPrime();
     }
@@ -734,11 +712,33 @@ function runCustomTest() {
   }
   for(n=0; n<input[10]; n++) {
     reset(true);
+    maxNum = input[11];
+    currentMethod = 2;
+    startedGeneration = primes.length;
+    methodStartTime = getCurrentDate();
+    methodStartMs = methodStartTime[7];
+    currentNum = currentPrime.innerHTML;
+    num = maxNum - currentNum;
+    for(j=0; j<num; j++) {
+      m2NextPrime();
+    }
+    methodEndTime = getCurrentDate();
+    methodEndMs = methodEndTime[7];
+    timeElapsed = methodEndMs - methodStartMs;
+    pageStart.innerHTML = formatDateToString(methodStartTime);
+    pageEnd.innerHTML = formatDateToString(methodEndTime);
+    pageTime.innerHTML = String(timeElapsed) + " milliseconds";
+    stoppedGeneration = primes.length;
+    numberGenerated = stoppedGeneration - startedGeneration;
+    addNextTableRow();
+  }
+  for(n=0; n<input[12]; n++) {
+    reset(true);
     m31();
   }
-  for(n=0; n<input[11]; n++) {
+  for(n=0; n<input[13]; n++) {
     reset(true);
-    num = input[12];
+    num = input[14];
     currentMethod = 3;
     startedGeneration = primes.length;
     methodStartTime = getCurrentDate();
@@ -756,9 +756,9 @@ function runCustomTest() {
     numberGenerated = stoppedGeneration - startedGeneration;
     addNextTableRow();
   }
-  for(n=0; n<input[13]; n++) {
+  for(n=0; n<input[15]; n++) {
     reset(true);
-    maxNum = input[14];
+    maxNum = input[16];
     currentMethod = 3;
     startedGeneration = primes.length;
     methodStartTime = getCurrentDate();
@@ -777,5 +777,8 @@ function runCustomTest() {
     stoppedGeneration = primes.length;
     numberGenerated = stoppedGeneration - startedGeneration;
     addNextTableRow();
+  }
+  if(input[1] == 1) {
+    reset(true);
   }
 }
