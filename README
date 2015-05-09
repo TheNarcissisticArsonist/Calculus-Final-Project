@@ -6,8 +6,12 @@ Hotkeys:
 [shift]:    Switches to Method 3
 r:          Reset prime generation
 R:          Reset table
-t:          Toggle sort options visibility
+s:          Toggle sort options visibility
 a:          Run advanced test
+n:          Sort table by test number
+m:          Sort table by method
+t:          Sort table by time
+u:          Reset table sorting
 
 Most boxes on the page are clickable buttons,
 accomplishing similar or even the same thing as hotkeys.

@@ -388,6 +388,7 @@ pageTime = document.getElementById("elapsed");
 
 //Keyboard hotkeys
 document.addEventListener("keydown", function(event) {
+  console.log(event.which);
   switch(event.which) {
     case 16://shift
       modifierKeyStatus.shift = true;
@@ -452,7 +453,7 @@ document.addEventListener("keydown", function(event) {
         m13();
       }
       break;
-    case 84:
+    case 83://s
       if(modifierKeyStatus.command) {
         return;
       }
@@ -460,7 +461,7 @@ document.addEventListener("keydown", function(event) {
         tableSortToggle();
       }
       break;
-    case 65:
+    case 65://a
       if(modifierKeyStatus.command) {
         return;
       }
@@ -468,6 +469,37 @@ document.addEventListener("keydown", function(event) {
         runCustomTest();
       }
       break;
+    case 78://n
+      if(modifierKeyStatus.command || !sortClicked) {
+        return;
+      }
+      else {
+        sortByTestNumber();
+      }
+      break;
+    case 77://m
+      if(modifierKeyStatus.command || !sortClicked) {
+        return;
+      }
+      else {
+        sortByMethod();
+      }
+      break;
+    case 84://t
+      if(modifierKeyStatus.command || !sortClicked) {
+        return;
+      }
+      else {
+        sortByTime();
+      }
+      break;
+    case 85:
+      if(modifierKeyStatus.command || !sortClicked) {
+        return;
+      }
+      else {
+        sortByTestNumber();
+      }
     default:
       return;
       break;
