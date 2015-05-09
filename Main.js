@@ -470,7 +470,7 @@ document.addEventListener("keydown", function(event) {
       }
       break;
     case 78://n
-      if(modifierKeyStatus.command || !sortClicked) {
+      if(modifierKeyStatus.command) {
         return;
       }
       else {
@@ -478,7 +478,7 @@ document.addEventListener("keydown", function(event) {
       }
       break;
     case 77://m
-      if(modifierKeyStatus.command || !sortClicked) {
+      if(modifierKeyStatus.command) {
         return;
       }
       else {
@@ -486,7 +486,7 @@ document.addEventListener("keydown", function(event) {
       }
       break;
     case 84://t
-      if(modifierKeyStatus.command || !sortClicked) {
+      if(modifierKeyStatus.command) {
         return;
       }
       else {
@@ -494,7 +494,7 @@ document.addEventListener("keydown", function(event) {
       }
       break;
     case 85:
-      if(modifierKeyStatus.command || !sortClicked) {
+      if(modifierKeyStatus.command) {
         return;
       }
       else {
