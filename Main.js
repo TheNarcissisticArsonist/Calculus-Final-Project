@@ -629,17 +629,20 @@ function mySort(test, key) {
 customTest = document.getElementById("custom");
 customTest.addEventListener("click", runCustomTest);
 function runCustomTest() {
-  input = prompt("").split("");
+  input = prompt("").split(".");
   //Format:
   //[m11, m12, m12num, m13, m13num, m21, m22, m22num, m23, m23num, m31, m32, m32num, m33, m33num, resetTable]
+  for(i=0; i<input.length; i++) {
+    input[i] = Number(input[i]);
+  }
   if(input[15] == 1) {
     resetTable(true);
   }
-  for(i=0; i<input[0]; i++) {
+  for(n=0; n<input[0]; n++) {
     reset(true);
     m11();
   }
-  for(i=0; i<input[1]; i++) {
+  for(n=0; n<input[1]; n++) {
     reset(true);
     num = input[2]
     currentMethod = 1;
@@ -659,7 +662,7 @@ function runCustomTest() {
     numberGenerated = stoppedGeneration - startedGeneration;
     addNextTableRow();
   }
-  for(i=0; i<input[3]; i++) {
+  for(n=0; n<input[3]; n++) {
     reset(true);
     maxNum = input[4];
     currentMethod = 1;
@@ -681,11 +684,11 @@ function runCustomTest() {
     numberGenerated = stoppedGeneration - startedGeneration;
     addNextTableRow();
   }
-  for(i=0; i<input[5]; i++) {
+  for(n=0; n<input[5]; n++) {
     reset(true);
     m21();
   }
-  for(i=0; i<input[6]; i++) {
+  for(n=0; n<input[6]; n++) {
     reset(false);
     num = input[7];
     currentMethod = 2;
@@ -705,7 +708,7 @@ function runCustomTest() {
     numberGenerated = stoppedGeneration - startedGeneration;
     addNextTableRow();
   }
-  for(i=0; i<input[8]; i++) {
+  for(n=0; n<input[8]; n++) {
     reset(true);
     maxNum = input[9];
     currentMethod = 2;
@@ -727,11 +730,11 @@ function runCustomTest() {
     numberGenerated = stoppedGeneration - startedGeneration;
     addNextTableRow();
   }
-  for(i=0; i<input[10]; i++) {
+  for(n=0; n<input[10]; n++) {
     reset(true);
     m31();
   }
-  for(i=0; i<input[11]; i++) {
+  for(n=0; n<input[11]; n++) {
     reset(true);
     num = input[12];
     currentMethod = 3;
@@ -751,7 +754,7 @@ function runCustomTest() {
     numberGenerated = stoppedGeneration - startedGeneration;
     addNextTableRow();
   }
-  for(i=0; i<input[13]; i++) {
+  for(n=0; n<input[13]; n++) {
     reset(true);
     maxNum = input[14];
     currentMethod = 3;
