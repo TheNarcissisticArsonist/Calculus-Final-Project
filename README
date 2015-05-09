@@ -16,3 +16,24 @@ u:          Reset table sorting
 Most boxes on the page are clickable buttons,
 accomplishing similar or even the same thing as hotkeys.
 Sometimes, they can do stuff the hotkeys can't.
+
+For the custom test, the format is
+a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q where...
+a is 1 or 0, whether to reset the table before running the test
+b is 1 or 0, whether to reset the prime generation after running the test
+c is the number of m11 tests to run
+d is the number of m12 tests to run
+e is how high the m12 tests will run
+f is the number of m13 tests to run
+g is how high the m13 tests will run
+h is the number of m21 tests to run
+i is the number of m22 tests to run
+j is how high the m22 tests will run
+k is the number of m23 tests to run
+l is how high the m23 tests will run
+m is the number of m31 tests to run
+n is the number of m32 tests to run
+o is how high the m32 tests will run
+p is the number of m33 tests to run
+q is how high the m33 tests will run
+For example, the input 1.1.0.0.0.5.500.0.0.0.5.500.0.0.0.5.500 would run 5 tests to 500 of m13, m23, and m33.
