@@ -458,6 +458,7 @@ document.addEventListener("keydown", function(event) {
       else {
         tableSortToggle();
       }
+      break;
     case 65:
       if(modifierKeyStatus.command) {
         return;
@@ -465,6 +466,7 @@ document.addEventListener("keydown", function(event) {
       else {
         runCustomTest();
       }
+      break;
     default:
       return;
       break;
