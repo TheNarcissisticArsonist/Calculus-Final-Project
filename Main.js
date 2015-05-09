@@ -471,6 +471,7 @@ document.addEventListener("keydown", function(event) {
       return;
       break;
   }
+  displayKeyRegistry();
 });
 document.addEventListener("keyup", function(event) {
   switch(event.which) {
@@ -487,12 +488,17 @@ document.addEventListener("keyup", function(event) {
       return;
       break;
   }
+  displayKeyRegistry();
 });
 modifierKeyStatus = {
   shift: false,
   control: false,
   command: false
 };
+function displayKeyRegistry() {
+  myString = String(modifierKeyStatus.shift) + " " + String(modifierKeyStatus.control) + " " + String(modifierKeyStatus.command);
+  document.getElementById("keyRegistry").innerHTML = myString;
+}
 
 //Table sorting
 tableSortButton = document.getElementById("sort");
